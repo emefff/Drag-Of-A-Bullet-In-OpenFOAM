@@ -8,6 +8,15 @@ The simulation is pressure-driven, the air is modeled as ideal gas, temperature 
 The report "Conceptual Design Approach for Small-Caliber Aeroballistics With Application to 5.56-mm Ammunition" by Paul Weinacht, James F. Newill, and Paul J. Conroy, ARL report nr. ARL-TR-3620 contains a drag coefficient vs Mach number diagram on p. 3, with which we can compare our findings. Generally, these numbers would be used for subsequent calculation of trajectories with additional input parameters like windage, elevation angle, altitude, temperature, air density, amount of shell powder, rifling, .....
 
 
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+
+
+
+
 
 
 
