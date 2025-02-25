@@ -23,8 +23,9 @@ The corresponding pressure distribution looks like this:
 Both videos shared apply to the first row in the table (v = 365 m/s). 
 
 How are the calculated values holding up against measured data? Let's take a look at the mentioned drag coefficient vs. Mach number diagram:
-
 ![Fit-of-drag-coefficient-for-the-M855](https://github.com/user-attachments/assets/71c09887-cc43-49e9-a14a-e33cfa78ed7b)
+
+Clearly, oru values are a bit too high, but well within range. This can have a bunch of reasons, among these a too coarse mesh. 
 
 
 
