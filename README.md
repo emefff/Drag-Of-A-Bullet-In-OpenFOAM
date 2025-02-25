@@ -15,6 +15,7 @@ At 298K the speed of sound is approx. 346.03 m/s. For the velocity we take the v
 | 365.969  | 1.0576  | 1.434596 | 1.49364  | 0.5640
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 
+Both videos shared apply to the first row in the table (v = 365 m/s). 
 
 
 
