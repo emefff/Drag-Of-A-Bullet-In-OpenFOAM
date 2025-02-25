@@ -8,6 +8,11 @@ The simulation is pressure-driven, the air is modeled as ideal gas, temperature 
 The report "Conceptual Design Approach for Small-Caliber Aeroballistics With Application to 5.56-mm Ammunition" by Paul Weinacht, James F. Newill, and Paul J. Conroy, ARL report nr. ARL-TR-3620 contains a drag coefficient vs Mach number diagram on p. 3, with which we can compare our findings. Generally, these numbers would be used for subsequent calculation of trajectories with additional input parameters like windage, elevation angle, altitude, temperature, air density, amount of shell powder, rifling, .....
 
 At 298K the speed of sound is approx. 346.03 m/s. For the velocity we take the value of Uy in the free flow just before the bullet, the force is calculated by OpenFOAM. For the density we take the value of the free flow before the bullet. 
+Let's take a look at a typical velocity result with developped flow:
+![Uy_final](https://github.com/user-attachments/assets/1d551f82-b4d4-4486-afaa-d23d3bdb8382)
+
+The corresponding pressure distribution looks like this:
+![p_final](https://github.com/user-attachments/assets/912dfb8e-6c19-4d18-b005-38df20b109f0)
 
 
 | velocity / m/s | Mach nr. / 1 | force / N | density / kg/m^3 | drag coefficient / 1 |
