@@ -3,7 +3,7 @@ This is a very interesting example of a compressible flow simulation in OpenFOAM
 The model for the simulation is derived from a sketch (some details are left to our imagination) found in "Aerodynamic and Flight Dynamic Characteristics of 5.56-mm Ammunition: M855" by Sidra I. Silton and Bradley E. Howell, ARL report nr. ARL-TR-5182 from May 2010. 
 
 The setup for the simulation is quite basic, for the single object we just need the bullet.stl, the 'box' sourrounding it is generated with blockMesh, the final mesh is generated with snappyHExMesh.
-The simulation is pressure-driven, the air is modeled as ideal gas, temperature is 298K. As the inlet pressure drives our flow, we need to do some calibration to arrive at the velocity numbers we want. The initial velocity is set over the whole internal field, the inlet pressure is adapted in such a way it (approximately) keeps the set speed constant over the whole simulation time. As we use rhoCentralFoam as our solver, the simulation is transient and we can follow the flow buildup at the object. The duration of the sim is up to the user, basically we wait until our flow quantities don't change any longer with time. In OpenFOAM, we can apply functions to calculate quantities in our data. Here, the force function comes in handy, we use it on our patch named 'bullet'. This force, together with air density, bullet cross section area, and velocity (squared) can be used to calculate Cd of the bullet at the given Mach number. 
+The simulation is pressure-driven, the air is modeled as ideal gas, temperature is 298K. As the inlet pressure drives our flow, we need to do some calibration to arrive at the velocity numbers we want. The initial velocity is set over the whole internal field, the inlet pressure is adapted in such a way it (approximately) keeps the set speed constant over the whole simulation time. As we use rhoCentralFoam as our solver, the simulation is transient and we can follow the flow buildup at the object. The duration of the sim is up to the user, basically we wait until our flow quantities don't change any longer with time. In OpenFOAM, we can apply functions to calculate quantities in our data. Here, the force function comes in handy, we use it on our patch named 'bullet'. This force, together with air density, bullet cross section area, and velocity (squared) can be used to calculate Cd of the bullet at the given Mach number. When launching a new simulation we start with a low maxCo = 0.1 and give it a few timeSteps. Later we steadily increase maxCo to 0.5. 
 
 The report "Conceptual Design Approach for Small-Caliber Aeroballistics With Application to 5.56-mm Ammunition" by Paul Weinacht, James F. Newill, and Paul J. Conroy, ARL report nr. ARL-TR-3620 contains a drag coefficient vs Mach number diagram on p. 3, with which we can compare our findings. Generally, these numbers would be used for subsequent calculation of trajectories with additional input parameters like windage, elevation angle, altitude, temperature, air density, amount of shell powder, rifling, .....
 
@@ -12,7 +12,7 @@ At 298K the speed of sound is approx. 346.03 m/s. For the velocity we take the v
 
 | velocity / m/s | Mach nr. / 1 | force / N | density / kg/m^3 | drag coefficient / 1 |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 365.1  | 1.055  | 1.4306  | 1.493  | 0.5654
+| 365.969  | 1.0576  | 1.434596 | 1.49364  | 0.5640
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 
 
