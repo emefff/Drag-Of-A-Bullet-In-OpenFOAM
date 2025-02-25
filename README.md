@@ -12,7 +12,7 @@ At 298K the speed of sound is approx. 346.03 m/s. For the velocity we take the v
 
 | velocity / m/s | Mach nr. / 1 | force / N | density / kg/m^3 | drag coefficient / 1 |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 365.1  | 1.055  | 1.4306  | 1.493  |
+| 365.1  | 1.055  | 1.4306  | 1.493  | 0.5654
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 
 
