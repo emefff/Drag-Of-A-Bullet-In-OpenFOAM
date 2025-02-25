@@ -17,8 +17,8 @@ The corresponding pressure distribution looks like this:
 
 | velocity / m/s | Mach nr. / 1 | force / N | density / kg/m^3 | drag coefficient / 1 |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 365.969  | 1.0576  | 1.434596 | 1.49364  | 0.5640
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 365.969  | 1.0576  | 1.434596 | 1.49364  | 0.5640  |
+| 412.841  | 1.1930 | 3.210143  | 2.50583  | 0.5912  |
 
 Both videos shared apply to the first row in the table (v = 365 m/s). 
 
