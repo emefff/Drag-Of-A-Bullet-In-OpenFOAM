@@ -5,7 +5,9 @@ The model for the simulation is derived from a sketch (some details are left to 
 The setup for the simulation is quite basic, for the single object we just need the bullet.stl, the 'box' sourrounding it is generated with blockMesh, the final mesh is generated with snappyHExMesh.
 The simulation is pressure-driven, the air is modeled as ideal gas, temperature is 298K. As the inlet pressure drives our flow, we need to do some calibration to arrive at the velocity numbers we want. The initial velocity is set over the whole internal field, the inlet pressure is adapted in such a way it (approximately) keeps the set speed constant over the whole simulation time. As we use rhoCentralFoam as our solver, the simulation is transient and we can follow the flow buildup at the object. The duration of the sim is up to the user, basically we wait until our flow quantities don't change any longer with time. In OpenFOAM, we can apply functions to calculate quantities in our data. Here, the force function comes in handy, we use it on our patch named 'bullet'. This force, together with air density, bullet cross section area, and velocity (squared) can be used to calculate Cd of the bullet at the given Mach number. 
 
-The report "Conceptual Design Approach for Small-Caliber Aeroballistics With Application to 5.56-mm Ammunition" by Paul Weinacht, James F. Newill, and Paul J. Conroy, ARL report nr. ARL-TR-3620 contains a drag coefficient vs Mach number diagram on p. 3, with which we can compare our findings. 
+The report "Conceptual Design Approach for Small-Caliber Aeroballistics With Application to 5.56-mm Ammunition" by Paul Weinacht, James F. Newill, and Paul J. Conroy, ARL report nr. ARL-TR-3620 contains a drag coefficient vs Mach number diagram on p. 3, with which we can compare our findings. Generally, these numbers would be used for subsequent calculation of trajectories with additional input parameters like windage, elevation angle, altitude, temperature, air density, amount of shell powder, rifling, .....
+
+
 
 
 
