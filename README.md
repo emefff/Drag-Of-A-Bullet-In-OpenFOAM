@@ -15,10 +15,10 @@ The corresponding pressure distribution looks like this:
 ![p_final](https://github.com/user-attachments/assets/912dfb8e-6c19-4d18-b005-38df20b109f0)
 
 
-| velocity / m/s | Mach nr. / 1 | force / N | density / kg/m^3 | drag coefficient / 1 |
+| velocity / m/s | Mach nr. / 1 | force / N | drag coefficient / 1 |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 365.969  | 1.0576  | 1.434596 | 1.49364  | 0.5640  |
-| 412.841  | 1.1930 | 3.210143  | 2.50583  | 0.5912  |
+| 365.969  | 1.0576  | 1.434596 | 0.5640  |
+| 412.841  | 1.1930 | 3.210143  | 0.5912  |
 
 Both videos shared apply to the first row in the table (v = 365 m/s). 
 
