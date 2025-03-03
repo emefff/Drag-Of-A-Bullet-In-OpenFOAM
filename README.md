@@ -19,7 +19,7 @@ And finally, Ma = 2.0:
 
 
 
-| velocity / m/s | Mach nr. / 1 | force / N | drag coefficient / 1 |
+| velocity / m/s | Ma / 1 | force / N | drag coefficient / 1 |
 | ------------- | ------------- | ------------- | ------------- |
 | 416.68  | 1.2  | 1.614715 | 0.5681 |
 | 520.84 | 1.5 | 2.215589  | 0.4990  | 
