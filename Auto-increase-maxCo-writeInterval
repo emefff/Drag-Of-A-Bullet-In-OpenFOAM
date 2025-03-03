@@ -1,0 +1,96 @@
+#!/bin/bash
+# This script increases maxCo and writeInterval automatically by given time intervals
+# Just start this script either alongside in the same folder of your pimpleFoam or 
+# whatever and let it modify maxCo
+
+deltaT=$(foamDictionary -value -entry deltaT system/controlDict 2>/dev/null)
+maxCo=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+endTime=$(foamDictionary -value -entry endTime system/controlDict 2>/dev/null)
+writeInterval=$(foamDictionary -value -entry writeInterval system/controlDict 2>/dev/null)
+
+factorincrease=2
+timeStepIncrease=120
+maxMaxCo=$( echo "0.5" | bc -l | sed -e 's/^\./0./' )
+
+echo "+++++ deltaT = $deltaT"
+echo "+++++ maxCoStart = $maxCo"
+echo "+++++ endTime = $endTime"
+echo "+++++ writeInterval = $writeInterval"
+echo "+++++ timeStepIncrease = $timeStepIncrease"
+echo "+++++ maxMaxCo = $maxMaxCo"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+
+## bc -l | sed -e 's/^\./0./' adds leading 0
+maxCo_new=$(bc -l <<<"${maxCo}*${factorincrease}" | sed -e 's/^\./0./')
+echo "+++++ Next: Increasing maxCo to $maxCo_new ....."
+sleep $timeStepIncrease
+sed -i "s/maxCo           $maxCo;/maxCo           $maxCo_new;/" system/controlDict
+maxCoCheck=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++ Checking: maxCo = $maxCoCheck ...."
+
+maxCo=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+maxCo_new=$(bc -l <<<"${maxCo}*${factorincrease}" | sed -e 's/^\./0./')
+echo "+++++ Next: Increasing maxCo to $maxCo_new ....."
+sleep $timeStepIncrease
+sed -i "s/maxCo           $maxCo;/maxCo           $maxCo_new;/" system/controlDict
+maxCoCheck=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++ Checking: maxCo = $maxCoCheck ...."
+
+maxCo=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+maxCo_new=$(bc -l <<<"${maxCo}*${factorincrease}" | sed -e 's/^\./0./')
+echo "+++++ Next: Increasing maxCo to $maxCo_new ....."
+sleep $timeStepIncrease
+sed -i "s/maxCo           $maxCo;/maxCo           $maxCo_new;/" system/controlDict
+maxCoCheck=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++ Checking: maxCo = $maxCoCheck ...."
+
+maxCo=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+maxCo_new=$(bc -l <<<"${maxCo}*${factorincrease}" | sed -e 's/^\./0./')
+echo "+++++ Next: Increasing maxCo to $maxCo_new ....."
+sleep $timeStepIncrease
+sed -i "s/maxCo           $maxCo;/maxCo           $maxCo_new;/" system/controlDict
+maxCoCheck=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++ Checking: maxCo = $maxCoCheck ...."
+
+maxCo=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+maxCo_new=$(bc -l <<<"${maxCo}*${factorincrease}" | sed -e 's/^\./0./')
+echo "+++++ Next: Increasing maxCo to $maxCo_new ....."
+sleep $timeStepIncrease
+sed -i "s/maxCo           $maxCo;/maxCo           $maxCo_new;/" system/controlDict
+maxCoCheck=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++ Checking: maxCo = $maxCoCheck ...."
+
+maxCo=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+maxCo_new=$maxMaxCo
+echo "+++++ Next: Increasing maxCo to $maxCo_new ....."
+sleep $timeStepIncrease
+sed -i "s/maxCo           $maxCo;/maxCo           $maxCo_new;/" system/controlDict
+maxCoCheck=$(foamDictionary -value -entry maxCo system/controlDict 2>/dev/null)
+echo "+++++ Checking: maxCo = $maxCoCheck ...."
+
+#writeIntervalRest=$( echo "1e-06")
+#sleep 60
+#echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+#echo "+++++ Next: Increasing writeInterval to $writeIntervalRest"
+#writeInterval=$(foamDictionary -value -entry writeInterval system/controlDict 2>/dev/null)
+## oder ${writeInterval//0} wer kennt sich da noch aus
+#sed -i "s/writeInterval   $writeInterval;/writeInterval   $writeIntervalRest;/" system/controlDict
+#writeInterval=$(foamDictionary -value -entry writeInterval system/controlDict 2>/dev/null)
+#sleep 0.1
+#echo "+++++ Checking: writeIntervalRest = $writeInterval"
+
+#writeIntervalRest=$( echo "1e-05" )
+#sleep 600
+#echo "+++++++++++++++++++++++++++++++++++++++++++++++++++"
+#echo "+++++ Next: Increasing writeInterval to $writeIntervalRest"
+#writeInterval=$(foamDictionary -value -entry writeInterval system/controlDict 2>/dev/null)
+#sed -i "s/writeInterval   $writeInterval;/writeInterval   $writeIntervalRest;/" system/controlDict
+#writeInterval=$(foamDictionary -value -entry writeInterval system/controlDict 2>/dev/null)
+#sleep 0.1
+#echo "+++++ Checking: writeIntervalRest = $writeInterval"
+
