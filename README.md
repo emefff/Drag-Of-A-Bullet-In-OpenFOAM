@@ -27,7 +27,7 @@ And finally, Ma = 2.0:
 
 Both videos shared apply to the first row in the table (v = 416.7 m/s). 
 
-How are the calculated values holding up against measured data? Let's take a look at the mentioned drag coefficient vs. Mach number diagram:
+How are the calculated values holding up against measured data? Let's take a look at the mentioned drag coefficient vs. Mach number diagram of the same caliber bullet:
 
 ![Fit-of-drag-coefficient-for-the-M855](https://github.com/user-attachments/assets/71c09887-cc43-49e9-a14a-e33cfa78ed7b)
 
