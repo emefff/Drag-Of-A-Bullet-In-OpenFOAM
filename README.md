@@ -31,8 +31,8 @@ How are the calculated values holding up against measured data? Let's take a loo
 
 ![Fit-of-drag-coefficient-for-the-M855](https://github.com/user-attachments/assets/71c09887-cc43-49e9-a14a-e33cfa78ed7b)
 
-Clearly, our values are too high, only somehow within range. This can have a bunch of reasons, among these a too coarse mesh (only ~1.5M cells) and/or a to small simulation domain and also not fully developed flow. 
-However, carefully executed, OpenFOAM can also manage this engineering job.
+Clearly, our values are too high, only somehow within range. This can have a bunch of reasons, among these a too coarse mesh (only ~1.6M cells) and/or a to small simulation domain and also not fully developed flow. 
+However, carefully executed, OpenFOAM can also manage this engineering job with more precision.
 
 emefff@gmx.at
 
